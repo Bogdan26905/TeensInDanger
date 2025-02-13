@@ -2,159 +2,330 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Музика для прослуховування</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Перша Медична Допомога</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-  background-image: url('/Users/abb/Desktop/music/background.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Світло-сірий фон */
+            color: #333; /* Темно-сірий текст */
+        }
 
-
-
-        /* Custom CSS to maintain background color */
-        .accordion-button {
-            background-color: #13c3d6;
+        /* Заголовок */
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #F44336; /* червоний */
             color: white;
+            border-radius: 10px 10px 0 0;
         }
 
-        .accordion-button:focus {
-            box-shadow: none;
+        .header h1 {
+            font-size: 3rem;
         }
 
-        .accordion-body {
-            background-color: #13c3d6;
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Основна частина */
+        .content {
+            margin: 30px auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff; /* білий фон для контенту */
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #b4b4b4;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #F44336; /* червоний */
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .image-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Панель навігації */
+        .nav-bar {
+            position: fixed;
+            top: 20%;
+            left: 0;
+            background-color: #2c3e50; /* темно-синій */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            width: 200px; /* Задано ширину */
+            transition: left 0.3s ease, width 0.3s ease; /* Плавний перехід ширини */
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-bar ul li {
+            margin: 8px 0;
+            font-size: 1.2rem;
+        }
+
+        .nav-bar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+            .nav-bar ul li a:hover {
+            color: #F44336; /* червоний */
+        }
+
+
+        /* Стилізація для кнопки */
+        #toggle-nav-button {
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #F44336;
+            color: white;
+            border: none;
+        }
+
+        #toggle-nav-button:hover {
+            background-color: #d32f2f; /* темніший червоний */
+        }
+
+        /* Стилізація для мобільних */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            .nav-bar {
+                left: -5px;
+                top: -5px;
+                width: auto;
+                size: -20%;
+            }
+
+            .nav-bar ul li {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    
-
-    <div class="container text-center mt-5">
-        <h1 class="mb-4">Музика для прослуховування</h1>
-        <div class="row justify-content-center">
-            <!-- Українська музика -->
-            <div class="col-2">
-                <div class="accordion" id="musicAccordion1">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                Українська Музика
-                            </button>
-                        </h2>
-                        <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#musicAccordion1">
-                            <div class="accordion-body">
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=oAFsYJEsd2M"><li>Скрябін - Спи Собі Сама</li></a>
-                                    <a href="https://www.youtube.com/watch?v=DluVNgumdpI"><li>Степан Гіга - Золото Карпат</li></a>
-                                    <a href="https://www.youtube.com/watch?v=Q3q1Rb2nUH0"><li>Ілля Найда - Запах Квітів</li></a>
-                                    <a href="https://www.youtube.com/watch?v=hC09beqA7dg"><li>Іво Бобул - Осінній сад</li></a>
-                                    <a href="https://www.youtube.com/watch?v=X6fY-ne_e2M"><li>Володимир Івасюк - Пісня буде поміж нас</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Заспокійлива музика -->
-            <div class="col-2">
-                <div class="accordion" id="musicAccordion2">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                Заспокійлива Музика
-                            </button>
-                        </h2>
-                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#musicAccordion2">
-                            <div class="accordion-body">
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=LZ4ug8Nc0Q8"><li>Home - Resonance</li></a>
-                                    <a href="https://www.youtube.com/watch?v=8bzPyPUm8JE"><li>Nick Cave & The Bad Seeds - Abattoir Blues</li></a>
-                                    <a href="https://www.youtube.com/watch?v=AxuTd9rwEHQ"><li>Everlong - Foo Fighters</li></a>
-                                    <a href="https://www.youtube.com/watch?v=QkF3oxziUI4"><li>Led Zeppelin - Stairway To Heaven</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Рок -->
-            <div class="col-2">
-                <div class="accordion" id="musicAccordion3">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                Рок
-                            </button>
-                        </h2>
-                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#musicAccordion3">
-                            <div class="accordion-body">
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=4c8O2n1Gfto"><li>Aerosmith - Walk This Way</li></a>
-                                    <a href="https://www.youtube.com/watch?v=oRdxUFDoQe0"><li>Michael Jackson - Beat It</li></a>
-                                    <a href="https://www.youtube.com/watch?v=t365MuktYQs"><li>David Bowie - Starman</li></a>
-                                    <a href="https://www.youtube.com/watch?v=wTP2RUD_cL0"><li>Dire Straits - Money For Nothing</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Панк -->
-            <div class="col-2">
-                <div class="accordion" id="musicAccordion4">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-                                Панк
-                            </button>
-                        </h2>
-                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#musicAccordion4">
-                            <div class="accordion-body">
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=5BIElTtN6Fs"><li>Joy Division - Disorder</li></a>
-                                    <a href="https://www.youtube.com/watch?v=EfK-WX2pa8c"><li>The Clash - London Calling</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Хіп-хоп -->
-            <div class="col-2">
-                <div class="accordion" id="musicAccordion5">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
-                                Хіп-хоп
-                            </button>
-                        </h2>
-                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#musicAccordion5">
-                            <div class="accordion-body">
-                                <ul>
-                                    <a href="https://www.youtube.com/watch?v=_Yhyp-_hX2s"><li>Eminem - Lose Yourself</li></a>
-                                    <a href="https://www.youtube.com/watch?v=MYxAiK6VnXw"><li>Outkast - Ms. Jackson</li></a>
-                                    <a href="https://www.youtube.com/watch?v=ZAz3rnLGthg"><li>Kanye West - Flashing Lights</li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Заголовок -->
+    <div class="header">
+        <h1>Перша Медична Допомога</h1>
+        <p>Ваша допомога в критичних ситуаціях</p>
     </div>
-    <div class="your-class" style="position: fixed; bottom: 200px; left: 50%; transform: translateX(-50%); text-align: center;">
-        Музика є важливою частиною життя підлітків, оскільки вона допомагає їм виражати емоції та переживання, які часто важко передати словами. Це може бути засобом емоційного самовираження, що дозволяє справлятися з стресом, радістю або сумом. Музика також сприяє соціалізації, адже спільне слухання або обговорення улюблених пісень об'єднує підлітків, дозволяючи їм знаходити друзів і створювати зв'язки з однолітками. Вона розвиває творчі здібності, покращує пам'ять і концентрацію, а також стимулює інтелектуальний розвиток через вивчення музичних інструментів або композиції. Крім того, музика допомагає підліткам формувати власний стиль, визначати свої смаки та інтереси, що є важливим етапом у процесі самопізнання та розвитку особистості. Вона також має здатність підвищувати настрій, мотивувати до діяльності або допомагати заспокоїтися після важкого дня, що робить її незамінним елементом повсякденного життя.
-      </div>
-      
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Панель навігації -->
+    <div class="nav-bar">
+        <button id="toggle-nav-button" class="btn">Меню</button>
+        <ul>
+            <li><a href="#overview">Огляд</a></li>
+            <li><a href="#types">Типи травм</a></li>
+            <li><a href="#wounds">Рани та кровотечі</a></li>
+            <li><a href="#fractures">Переломи</a></li>
+            <li><a href="#burns">Опіки</a></li>
+            <li><a href="#choking">Задуха</a></li>
+            <li><a href="#shock">Шок</a></li>
+            <li><a href="#drowning">Утоплення</a></li>
+            <li><a href="#emergency">Екстрені служби</a></li>
+        </ul>
+    </div>
+
+    <!-- Основний контент -->
+    <div class="content">
+        <!-- Огляд -->
+        <section id="overview" class="section">
+            <h2>Огляд першої медичної допомоги</h2>
+            <p>Перша медична допомога (ПМД) — це комплекс екстрених заходів, які сприяють стабілізації стану людини до того, як на місце події прибудуть професійні медики. Важливо вчасно оцінити ситуацію та надавати допомогу без паніки.</p>
+        </section>
+
+        <!-- Типи травм -->
+        <section id="types" class="section">
+            <h2>Типи травм</h2>
+            <p>Травми можуть бути різними за тяжкістю та локалізацією. Знання типів травм та методів їх лікування допомагає вчасно надати допомогу.</p>
+
+            <p>Основні типи травм включають:</p>
+            <ul>
+                <li>Закриті травми (наприклад, удари, розтягнення, забої).</li>
+                <li>Відкриті травми (порізи, проколи, порушення цілісності шкіри).</li>
+                <li>Переломи.</li>
+                <li>Опіки.</li>
+                <li>Отруєння.</li>
+                <li>Порушення дихання та серцевої діяльності.</li>
+                <li>Утоплення.</li>
+            </ul>
+        </section>
+
+        <!-- Рани та кровотечі -->
+        <section id="wounds" class="section">
+            <h2>Рани та кровотечі</h2>
+            <p>Кровотечі — це одна з найпоширеніших ситуацій, коли необхідно надати першу медичну допомогу. В залежності від типу кровотечі, дії можуть відрізнятися.</p>
+
+            <p>Основні типи кровотеч:</p>
+            <ul>
+                <li>Артеріальна кровотеча — яскрава червона кров, що б'є струменем.</li>
+                <li>Венозна кровотеча — темна кров, що витікає рівномірно.</li>
+                <li>Капілярна кровотеча — незначні порізи або садна.</li>
+            </ul>
+            <p>Для зупинки кровотечі можна використовувати перев'язки, джгути, компреси та інші методи.</p>
+            <div class="image-container">
+                <img src="wounds.jpg" alt="Рани та кровотечі">
+            </div>
+        </section>
+
+        <!-- Переломи -->
+        <section id="fractures" class="section">
+            <h2>Переломи</h2>
+            <p>Перелом — це порушення цілісності кістки, яке зазвичай супроводжується болем, набряком і зміною форми кінцівки.</p>
+
+            <p>Дії при переломах:</p>
+            <ul>
+                <li>Забезпечте нерухомість пошкодженої частини тіла.</li>
+                <li>При необхідності накладіть шину або імпровізовану пов'язку.</li>
+                <li>При сильному болі дайте знеболювальне, якщо це дозволено.</li>
+            </ul>
+            <div class="image-container">
+                <img src="fractures.jpg" alt="Переломи" width="600" height="600">
+            </div>
+        </section>
+
+        <!-- Опіки -->
+        <section id="burns" class="section">
+            <h2>Опіки</h2>
+            <p>Опіки виникають при контакті шкіри з високою температурою, хімічними речовинами чи електричним струмом.</p>
+
+            <p>Перша допомога при опіках:</p>
+            <ul>
+                <li>Охолодіть уражену ділянку холодною водою.</li>
+                <li>Накладіть стерильну пов'язку.</li>
+                <li>При серйозних опіках необхідно звертатися до лікаря.</li>
+            </ul>
+            <div class="image-container">
+                <iframe width="auto" height="360" src="https://www.youtube.com/embed/xCIVnK-m-UU?si=-0UD_LT9A1jZ8PhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Задуха -->
+        <section id="choking" class="section">
+            <h2>Задуха</h2>
+            <p>Задуха відбувається через блокування дихальних шляхів стороннім предметом. Важливо діяти швидко, щоб звільнити дихальні шляхи.</p>
+
+            <p>Перша допомога при задусі:</p>
+            <ul>
+                <li>Використовуйте прийом Геймліха для виведення предмета.</li>
+                <li>Якщо потерпілий не може дихати, потрібно звертатися до лікаря.</li>
+            </ul>
+            <div class="image-container">
+                <img src="choking.jpg" alt="Задуха" width="400" height="400">
+            </div>
+        </section>
+
+        <!-- Шок -->
+        <section id="shock" class="section">
+            <h2>Шок</h2>
+            <p>Шок — це стан, при якому організм не може забезпечити належний кровообіг. Це небезпечний стан, що вимагає негайної допомоги.</p>
+
+            <p>Перша допомога при шоку:</p>
+            <ul>
+                <li>Покласти потерпілого на горизонтальну поверхню.</li>
+                <li>Накрити теплою ковдрою.</li>
+                <li>При необхідності надавати штучне дихання.</li>
+            </ul>
+            <div class="image-container">
+                <img src="shock.jpg" alt="Шок">
+            </div>
+        </section>
+
+        <!-- Утоплення -->
+        <section id="drowning" class="section">
+            <h2>Утоплення</h2>
+            <p>Утоплення — це серйозне і небезпечне для життя стан, яке виникає через потрапляння води в дихальні шляхи.</p>
+
+            <p>Перша допомога при утопленні:</p>
+            <ul>
+                <li>Якщо потерпілий ще не втратив свідомість, витягніть його з води та надайте допомогу.</li>
+                <li>Забезпечте дихання за допомогою штучного дихання, якщо це необхідно.</li>
+                <li>Негайно зверніться за медичною допомогою.</li>
+            </ul>
+            <div class="image-container">
+                <img src="1111.jpg" alt="Утоплення1">
+                <img src="2222.jpg" alt="Утоплення2">
+                <img src="3333.jpg" alt="Утоплення3">
+                <img src="4444.jpg" alt="Утоплення4">
+            </div>
+        </section>
+
+        <!-- Екстрені служби -->
+        <section id="emergency" class="section">
+            <h2>Екстрені служби</h2>
+            <p>У випадку надзвичайної ситуації негайно телефонуйте за одним із наступних номерів:</p>
+            <ul>
+                <li><strong>101</strong> — Пожежна служба.</li>
+                <li><strong>102</strong> — Поліція.</li>
+                <li><strong>103</strong> — Швидка медична допомога.</li>
+                <li><strong>104</strong> — Служба газу.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Отримуємо елементи кнопки і списку навігації
+        const toggleButton = document.getElementById('toggle-nav-button');
+        const navList = document.querySelector('.nav-bar ul');
+    
+        // Додаємо обробник події для кнопки
+        toggleButton.addEventListener('click', () => {
+    navList.classList.toggle('d-none');
+    if (navList.classList.contains('d-none')) {
+        document.querySelector('.nav-bar').style.width = '85px'; // Зменшуємо ширину, коли меню приховане
+    } else {
+        document.querySelector('.nav-bar').style.width = '200px'; // Встановлюємо ширину назад
+    }
+});
+    </script>
+    <footer>   </footer>
 </body>
 </html>
